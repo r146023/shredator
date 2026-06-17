@@ -1,0 +1,5 @@
+# Shredator file-list example.
+# One path per line. Empty lines and lines beginning with # are skipped.
+./secrets/passwords.txt
+./exports/customer-export.csv
+./tmp/session-cache

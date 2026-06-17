@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/shredator.machine.v1.schema.json",
+  "title": "Shredator Machine Output v1 Summary",
+  "type": "object",
+  "required": [
+    "schema",
+    "type",
+    "success",
+    "status",
+    "exit_code",
+    "duration_ms",
+    "output_format",
+    "summary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "shredator.machine.v1"
+    },
+    "type": {
+      "const": "summary"
+    },
+    "success": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "failed",
+        "cancelled",
+        "usage"
+      ]
+    },
+    "exit_code": {
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "duration_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "output_format": {
+      "type": "string",
+      "enum": [
+        "json",
+        "jsonl"
+      ]
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "files_shredded",
+        "directories_removed",
+        "paths_successful",
+        "paths_failed",
+        "paths_skipped",
+        "bytes_seen",
+        "bytes_overwritten",
+        "overwrite_passes_completed",
+        "warnings",
+        "errors"
+      ],
+      "properties": {
+        "files_shredded": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "directories_removed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "paths_successful": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "paths_failed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "paths_skipped": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bytes_seen": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bytes_overwritten": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "overwrite_passes_completed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "warnings": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "errors": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "level",
+          "event",
+          "message"
+        ],
+        "properties": {
+          "type": {
+            "const": "event"
+          },
+          "level": {
+            "type": "string",
+            "enum": [
+              "info",
+              "warning",
+              "error"
+            ]
+          },
+          "event": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
