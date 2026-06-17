@@ -712,11 +712,6 @@ This project is licensed under the MIT License unless your distribution uses a d
 
 ## Feedback and Support
 
-For bug reports, feature requests, or technical support, please contact:
-
-```text
-[Your Contact Information]
-```
 
 Selected users may be invited to participate in closed beta testing for upcoming features.
 
