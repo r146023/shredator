@@ -1,6 +1,6 @@
 # Shredator: Secure File & Directory Shredder
 
-[![License](https://img.shields.io/badge/license-see%20LICENSE-blue.svg)](./LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](./LICENSE)
 [![Rust Version](https://img.shields.io/badge/rust-1.64%2B-blue.svg)](https://www.rust-lang.org/)
 
 Shredator is a cross-platform command-line utility for best-effort secure file and directory deletion. It overwrites file contents, optionally renames files before deletion, supports recursive directory processing, can process path lists, and can emit either human-readable logs or machine-readable JSON Lines for automation.
@@ -702,7 +702,8 @@ cargo build --release
 
 ## License
 
-See the `LICENSE` file located next to this `README.md` for the project license.
+This project is licensed under the Apache License, Version 2.0. See the [LICENSE](./LICENSE) file for details.
+
 
 ---
 
