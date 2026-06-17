@@ -1,6 +1,6 @@
 # Shredator: Secure File & Directory Shredder
 
-[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg)](https://example.com/license)
+[![License](https://img.shields.io/badge/license-see%20LICENSE-blue.svg)](./LICENSE)
 [![Rust Version](https://img.shields.io/badge/rust-1.64%2B-blue.svg)](https://www.rust-lang.org/)
 
 Shredator is a cross-platform command-line utility for best-effort secure file and directory deletion. It overwrites file contents, optionally renames files before deletion, supports recursive directory processing, can process path lists, and can emit either human-readable logs or machine-readable JSON Lines for automation.
@@ -40,7 +40,7 @@ For high-assurance sanitization of SSDs or decommissioned media, use full-disk e
 - **Safety Confirmations**: Confirmation prompts for sensitive or important files unless `--force` is used.
 - **Batch Processing**: Process many files or directories from a newline-delimited path list.
 - **Zero-Name Security**: Optionally rename files to random names before deletion to reduce filename leakage.
-- **Machine-Readable Responses**: Emit JSON Lines for integration with scripts, wrappers, GUIs, and tools such as `colemen_py`.
+- **Machine-Readable Responses**: Emit JSON Lines for integration with scripts, wrappers, GUIs, and external scripts, wrappers, GUIs, and automation tools.
 - **Human-Readable Reports**: Emit robocopy-style per-file logs and a final summary by default.
 - **Performance Benchmarking**: Measure and report shredding speed and throughput.
 - **Cross-Platform**: Designed to run on Linux, macOS, and Windows.
@@ -49,18 +49,6 @@ For high-assurance sanitization of SSDs or decommissioned media, use full-disk e
 ---
 
 ## Installation
-
-### Licensed Users
-
-1. Download the installer package from your licensed user portal.
-2. Follow the installation instructions for your platform.
-3. Activate using your license key, if required by your distribution.
-
-For evaluation licenses or purchasing information, please contact:
-
-```text
-[Your Contact Information]
-```
 
 ### From Source
 
@@ -73,7 +61,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 2. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/shredator.git
+git clone https://github.com/r146023/shredator.git
 cd shredator
 ```
 
@@ -95,7 +83,15 @@ On Windows, the executable will be:
 target\release\shredator.exe
 ```
 
-### Using Cargo
+### Using Cargo from Git
+
+If you want to install directly from the public repository:
+
+```bash
+cargo install --git https://github.com/r146023/shredator.git
+```
+
+If Shredator is later published to crates.io, it can also be installed with:
 
 ```bash
 cargo install shredator
@@ -394,7 +390,7 @@ shredator ~/private/ --zero-names
 ### Machine-Readable Automation
 
 ```bash
-# Emit JSON Lines for wrappers, GUI tools, or colemen_py
+# Emit JSON Lines for wrappers, GUI tools, or automation
 shredator ~/private/ --force --machine-responses
 ```
 
@@ -668,7 +664,7 @@ JSONL events are emitted in chronological order. For parallel or future threaded
 
 ## Contributing
 
-Contributions are welcome if this is an open-source distribution of Shredator. For proprietary/internal distributions, follow the contribution policy for your organization.
+Contributions are welcome. Please open an issue for bugs, feature requests, or design discussion before submitting larger changes.
 
 General workflow:
 
@@ -706,14 +702,17 @@ cargo build --release
 
 ## License
 
-This project is licensed under the MIT License unless your distribution uses a different commercial/proprietary license. See the `LICENSE` file for details.
+See the `LICENSE` file located next to this `README.md` for the project license.
 
 ---
 
 ## Feedback and Support
 
+For bug reports, feature requests, or technical support, contact:
 
-Selected users may be invited to participate in closed beta testing for upcoming features.
+```text
+ApolithSynthetic@gmail.com
+```
 
 ---
 
